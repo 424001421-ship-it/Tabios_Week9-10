@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My List App</title>
+  <style>
+    body {
+      background-color: #7b2fa8;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border: 2px solid #eb0aff;
+      border-radius: 10px;
+      padding: 30px;
+      width: 400px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: #eb0aff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 70%;
+      padding: 8px 10px;
+      border: 2px solid #eb0aff;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    button {
+      padding: 8px 14px;
+      background-color: #eb0aff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      margin-left: 6px;
+    }
+
+    button:hover {
+      background-color: #d451e0;
+    }
+
+    ul {
+      margin-top: 20px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      background-color: #f5e6ff;
+      border-left: 5px solid #e204f6;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      color: #333333;
+      font-size: 15px;
+    }
+
+    .empty-msg {
+      text-align: center;
+      color: #aaaaaa;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>My List</h2>
+
+    <input type="text" id="myInput" placeholder="Enter an item...">
+    <button onclick="addItem()">Add</button>
+
+  <script>
+    function AddtItem() {
+      var inputField = document.getElementById("myInput");
+      var text = inputField.value;
+
+      if (text === "") {
+        alert("Please type something first!");
+        return;
+      }
+
+      document.getElementById("emptyMsg").style.display = "none";
+
+      var li = document.createElement("li");
+      li.textContent = text;
+
+      var ul = document.getElementById("myList");
+      ul.appendChild(li);
+
+      inputField.value = "";
+    }
+  </script>
+
+</body>
+</html>
